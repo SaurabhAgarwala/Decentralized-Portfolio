@@ -1,0 +1,13 @@
+<h1>Proposals</h1>
+{% for proposal in proposals %}
+    From token address: {{ proposal.from }} <br>
+    To token address: {{ proposal.to }} <br>
+    Percentage Swap proposed: {{ proposal.perc }} <br>
+    Initiator Address: {{ proposal.initiator }} <br>
+    Current Votes In Favour: {{ proposal.agree }} <br>
+    Current Votes Not In Favour: {{ proposal.disagree }} <br>
+    <a href="{% url 'smartcontract:agree' id=proposal.id %}"><input type="button" value="Vote In Favour"></a>
+    <a href="{% url 'smartcontract:disagree' id=proposal.id %}"><input type="button" value="Vote Not In Favour"></a>
+    <a href="{% url 'smartcontract:execute' id=proposal.id %}"><input type="button" value="Execute"></a>
+    <br><br>
+{% endfor %}

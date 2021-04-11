@@ -1,0 +1,5 @@
+<form action="{% url 'smartcontract:withdraw' %}" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Withdraw">
+</form>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="There are lots of portfolios out there. These all portfolios are controlled by a centralized person/authority. So in the traditional portfolios, the sentiments of centralized authority may not be the same as sentiments of the market. This could lead the entire portfolio in the wrong direction. We built a platform, where no centralized authority will make decisions regarding the portfolio. All the decisions regarding the portfolio will be made by all the investors by voting. All the investors will have a say in the portfolio decision. So more investors mean more accurate prediction of market sentiments. Anyone can be a part of the portfolio. The user can join/leave the portfolio anytime they want. The funds which are locked in the smart contract follows the strategy which is decided by all the investors through voting.">
+        <meta name="author" content="SaurabhAgarwala">
+        
+        <title>Decentralised Portfolio</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.4.1/css/mdb.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" href="styles.css">
+    </head>
+
+    <body>
+        <div id="wrapper">
+            <div id="page-content-wrapper">
+                <header>
+                <div id="mainhead">
+                <h1><a id="headingtext" href="./index.html"><u>Decentralised Portfolio</u></a></h1>
+                </div><hr>
+                <center>
+                    <div class="row" style="align-self:center; width: 100vw">
+                        <div class="col-xs-4 col-sm-4 col-lg-4" style="align-self:center"><a id="detailpm" href="./investOrWithdraw.html">Invest/Withdraw</a></div>
+                        <div class="col-xs-4 col-sm-4 col-lg-4" style="align-self:center"><a id="detailpm" href="./propose.html">Propose</a></div>
+                        <div class="col-xs-4 col-sm-4 col-lg-4" style="align-self:center"><a id="detailpm" href="./voteOrExecute.html">Vote/Execute</a></div>
+                    </div>
+                </center>
+                <hr>
+                </header>        
+                <div class="wrap" style="background-color:rgb(255, 255, 255); color:black">
+                    <center>
+                        <div class="row" style="align-self:center; width: 100vw">
+                            <div class="col-xs-2 col-sm-2 col-lg-2" style="align-self:center"></div>
+                            <div id="proposals" class="col-xs-8 col-sm-8 col-lg-8" style="align-self:center">                    
+                                <h2>Proposals</h2>
+                                <input type="button" onClick="showAllProposals();" class="btn btn-primary" value=" Show All Proposals "/><br>
+                            </div>
+                            <div class="col-xs-2 col-sm-2 col-lg-2" style="align-self:center"></div>
+                        </div>
+                    </center>
+                </div>
+            </div>
+        </div>
+        <footer class="page-footer blue text-center text-md-left mt-0">
+            <div class="footer-copyright">
+                <div class="container-fluid">
+                    <em>Developed by</em><strong> Dhruvik and Saurabh</strong> </a>
+                </div>
+            </div>
+        </footer>
+        <script src="src/dpIssue.js">
+        </script>      
+    </body>
+</html>

@@ -12,6 +12,59 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.4.1/css/mdb.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
         <link rel="stylesheet" href="styles.css">
+        <script src="src/dpIssue.js">
+        </script>
+        <script>
+            function loadIssuePage() {
+  let content = '';
+  content = '\
+  <h2>Invest/Withdraw</h2>\
+  <form>\
+      <div class="form-group">\
+          <label class="control-label col-sm-2" for="numTokens">DPO Token Amount:</label>\
+          <div class="col-sm-10">\
+              <input type="text" class="form-control" id="numTokens" placeholder="Enter number of tokens">\
+          </div>\
+      </div>\
+      <input type="button" onClick="issue();" class="btn btn-primary" value=" Invest "/>\
+      <input type="button" onClick="withdraw();" class="btn btn-info" value=" Withdraw "/>\
+  </form>';
+  document.getElementById("maincontent").innerHTML = content;
+};
+
+function loadProposePage() {
+  let content = '';
+  content = '\
+    <h2>Proposal</h2> \
+    <form> \
+        <div class="form-group"> \
+            <label class="control-label col-sm-2" for="ftoken">From Token Address:</label> \
+            <div class="col-sm-10"> \
+                <input type="text" class="form-control" id="ftoken"> \
+            </div> \
+        </div> \
+        <div class="form-group"> \
+            <label class="control-label col-sm-2" for="ttoken">To Token Address:</label> \
+            <div class="col-sm-10"> \
+                <input type="text" class="form-control" id="ttoken"> \
+            </div> \
+        </div> \
+        <div class="form-group"> \
+            <label class="control-label col-sm-2" for="perc">Percentage:</label> \
+            <div class="col-sm-10"> \
+                <input type="text" class="form-control" id="perc"> \
+            </div> \
+        </div> \
+        <input type="button" onClick="propose();" class="btn btn-primary" value=" Propose "/> \
+    </form>';
+  document.getElementById("maincontent").innerHTML = content;
+};
+
+function loadVotePage() {
+    document.getElementById("maincontent").innerHTML = '<h1 id="detailhead"><i>Proposals Information Loading...</i></h1>';
+    showAllProposals();
+};
+        </script>
     </head>
 
     <body>
@@ -23,9 +76,9 @@
                 </div><hr>
                 <center>
                     <div class="row" style="align-self:center; width: 100vw">
-                        <div class="col-xs-4 col-sm-4 col-lg-4" style="align-self:center"><a id="detailpm" href="./investOrWithdraw.html">Invest/Withdraw</a></div>
-                        <div class="col-xs-4 col-sm-4 col-lg-4" style="align-self:center"><a id="detailpm" href="./propose.html">Propose</a></div>
-                        <div class="col-xs-4 col-sm-4 col-lg-4" style="align-self:center"><a id="detailpm" href="./voteOrExecute.html">Vote/Execute</a></div>
+                        <div class="col-xs-4 col-sm-4 col-lg-4" style="align-self:center"><a id="detailpm" href="javascript:loadIssuePage()">Invest/Withdraw</a></div>
+                        <div class="col-xs-4 col-sm-4 col-lg-4" style="align-self:center"><a id="detailpm" href="javascript:loadProposePage()">Propose</a></div>
+                        <div class="col-xs-4 col-sm-4 col-lg-4" style="align-self:center"><a id="detailpm" href="javascript:loadVotePage()">Vote/Execute</a></div>
                     </div>
                 </center>
                 <hr>
@@ -34,8 +87,8 @@
                     <center>
                         <div class="row" style="align-self:center; width: 100vw">
                             <div class="col-xs-2 col-sm-2 col-lg-2" style="align-self:center"></div>
-                            <div id="information" class="col-xs-8 col-sm-8 col-lg-8" style="align-self:center">                    
-                                <input type="button" onClick="getDetails();" class="btn btn-primary" value=" Get Portfolio Information "/><br>
+                            <div id="maincontent" class="col-xs-8 col-sm-8 col-lg-8" style="align-self:center">
+                                <h1 id="detailhead"><i>Portfolio Information Loading...</i></h1>
                             </div>
                             <div class="col-xs-2 col-sm-2 col-lg-2" style="align-self:center"></div>
                         </div>
@@ -50,7 +103,5 @@
                 </div>
             </div>
         </footer>
-        <script src="src/dpIssue.js">
-        </script>
     </body>
 </html>

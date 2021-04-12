@@ -695,7 +695,12 @@ window.issue = async function () {
   console.log(tx);
   console.log(numTok);
   // console.log(name);
-  alert("Invested Successfully");
+  // transactionHash
+  // alert(tx.transactionHash);
+  alert(
+    "Invested in portfolio successfully.\n you can see the transaction here :: https://kovan.etherscan.io/tx/" +
+      tx.transactionHash
+  );
   // alert("do something");
   // console.log("do something ");
 };
@@ -709,8 +714,12 @@ window.withdraw = async function () {
   console.log(tx);
   console.log(numTok);
   // console.log(name);
-  alert("Withdrawn  Successfully");
+  // alert("Withdrawn  Successfully");
 
+  alert(
+    "Funds has been ithdrawn Successfully.\n you can see the transaction here :: https://kovan.etherscan.io/tx/" +
+      tx.transactionHash
+  );
   // let tx1 = await contract.methods.proposals(1).call();
   // alert(tx1);
   // console.log(tx1);
@@ -725,25 +734,37 @@ window.propose = async function () {
   var perc = document.getElementById("perc").value;
 
   let tx = await contract.methods
-    .propose(ftoken, ttoken, parseInt(perc), parseInt(300))
+    .propose(ftoken, ttoken, parseInt(perc), parseInt(120))
     .send();
   console.log(tx);
   // console.log(name);
-  alert("Proposed");
+  // alert("Proposed");
+
+  alert(
+    "You have proposed a new strategy successfully.\n you can see the transaction here :: https://kovan.etherscan.io/tx/" +
+      tx.transactionHash
+  );
 };
 
 window.vote = async function (id, vt) {
   let tx = await contract.methods.voteForProposal(id, vt).send();
   console.log(tx);
   // console.log(name);
-  alert("voted");
+  alert(
+    "You have voted successfully.\n you can see the transaction here :: https://kovan.etherscan.io/tx/" +
+      tx.transactionHash
+  );
 };
 
 window.execute = async function (id) {
   let tx = await contract.methods.executeProposal(id).send();
   console.log(tx);
   // console.log(name);
-  alert("executed");
+  // alert("executed");
+  alert(
+    "You have executed strategy successfully.\n you can see the transaction here :: https://kovan.etherscan.io/tx/" +
+      tx.transactionHash
+  );
 };
 
 window.getDetails = async function () {
@@ -770,7 +791,7 @@ window.getDetails = async function () {
     console.log(tknAmount);
   }
   st += "</ol></p>";
-  document.getElementById("information").innerHTML = st;
+  document.getElementById("maincontent").innerHTML = st;
 };
 
 window.showAllProposals = async function () {
@@ -810,6 +831,6 @@ window.showAllProposals = async function () {
       i +
       ');" class="btn btn-warning" value=" Execute "/><br><br><br>';
   }
-  document.getElementById("proposals").innerHTML = s;
+  document.getElementById("maincontent").innerHTML = s;
   console.log("Done");
 };
